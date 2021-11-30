@@ -40,7 +40,7 @@ pipeline {
             }
         }
 
-       /* stage('Nexus Repository') {
+        stage('Nexus Repository') {
             steps {
                 script {
                     pom = readMavenPom file: "pom.xml";
@@ -73,6 +73,6 @@ pipeline {
                     }
                 }
             }
-        }*/
+        }
     }
 }
