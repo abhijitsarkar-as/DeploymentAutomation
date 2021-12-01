@@ -1,4 +1,4 @@
-package com.denofprogramming.config;
+package com.exaze.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -7,17 +7,17 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
-import com.denofprogramming.random.DefaultRandomNumberGenerator;
-import com.denofprogramming.random.RandomGenerator;
+import com.exaze.random.DefaultRandomNumberGenerator;
+import com.exaze.random.RandomGenerator;
 
 /**
- * @author denOfProgramming
+ * @author exaze
  *
  */
 @Configuration
 // Marks this class as configuration
 // Specifies which package to scan
-@ComponentScan("com.denofprogramming")
+@ComponentScan("com.exaze")
 // Enables Spring's annotations
 @EnableWebMvc
 public class Config {

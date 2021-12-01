@@ -1,4 +1,4 @@
-package com.denofprogramming.controller;
+package com.exaze.controller;
 
 import javax.inject.Inject;
 
@@ -11,9 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.denofprogramming.random.GeneratedRandomIdentifier;
-// denOfProgramming imports
-import com.denofprogramming.random.RandomGenerator;
+import com.exaze.random.GeneratedRandomIdentifier;
+// exaze imports
+import com.exaze.random.RandomGenerator;
 //logger imports
 //import org.apache.log4j.Logger;
 
@@ -31,7 +31,7 @@ import com.denofprogramming.random.RandomGenerator;
  * https://commons.apache.org/proper/commons-logging/guide.html
  * https://logging.apache.org/log4j/1.2/
  * 
- * @author denOfProgramming
+ * @author exaze
  * 
  */
 @Controller
@@ -42,7 +42,7 @@ public class IdentifierGenerationController {
 
 	// using the log4j api, jar provided by our specific dependency
 	private static final Logger logger = Logger
-			.getLogger("com.denofprogramming.controller.IdentifierGenerationController");
+			.getLogger("com.exaze.controller.IdentifierGenerationController");
 
 	// using the JCL api, jar provided by transient dependency via spring-core
 	private Log log = LogFactory.getLog(IdentifierGenerationController.class);

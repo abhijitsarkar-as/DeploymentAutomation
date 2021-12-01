@@ -1,4 +1,4 @@
-package com.denofprogramming.random;
+package com.exaze.random;
 
 import static org.junit.Assert.assertTrue;
 
@@ -9,7 +9,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 /**
- * @author denOfProgramming
+ * @author exaze
  *
  */
 public class DefaultRandomNumberGeneratorTest

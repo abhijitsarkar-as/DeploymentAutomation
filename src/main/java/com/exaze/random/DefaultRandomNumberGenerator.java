@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.denofprogramming.random;
+package com.exaze.random;
 
 import org.apache.commons.math3.random.RandomDataGenerator;
 
 
 /**
- * @author denOfProgramming
+ * @author exaze
  *
  */
 public class DefaultRandomNumberGenerator implements RandomGenerator {

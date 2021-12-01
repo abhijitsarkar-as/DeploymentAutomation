@@ -1,4 +1,4 @@
-package com.denofprogramming.config;
+package com.exaze.config;
 
 import javax.servlet.ServletContext;  
 import javax.servlet.ServletException;  
@@ -9,7 +9,7 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;  
   
 /**
- * @author denOfProgramming
+ * @author exaze
  *
  */
 public class WebInitializer implements WebApplicationInitializer {

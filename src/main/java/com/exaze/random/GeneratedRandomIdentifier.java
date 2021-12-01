@@ -1,8 +1,8 @@
-package com.denofprogramming.random;
+package com.exaze.random;
 
 
 /**
- * @author denOfProgramming
+ * @author exaze
  *
  */
 public final class GeneratedRandomIdentifier {

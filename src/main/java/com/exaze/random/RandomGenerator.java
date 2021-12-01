@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.denofprogramming.random;
+package com.exaze.random;
 
 
 /**
- * @author denOfProgramming
+ * @author exaze
  *
  */
 public interface RandomGenerator
