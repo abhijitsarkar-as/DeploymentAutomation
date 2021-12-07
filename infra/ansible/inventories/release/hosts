@@ -1,0 +1,2 @@
+[tomcat-nodes]
+release   ansible_host=15.207.189.107  ansible_user="{{ app1_user}}" ansible_sudo_pass="{{ app1_pass}}" ansible_password="{{ app1_pass}}"

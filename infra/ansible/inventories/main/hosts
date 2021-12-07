@@ -1,0 +1,2 @@
+[tomcat-nodes]
+main        ansible_host=
