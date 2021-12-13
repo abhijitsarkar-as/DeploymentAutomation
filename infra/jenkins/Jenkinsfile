@@ -85,8 +85,7 @@ pipeline {
            }
         }
 
-
-        stage ('Molecule test') {
+/*         stage ('Molecule test') {
               agent {
                 docker {
                     image 'quay.io/ansible/toolset'
@@ -102,6 +101,6 @@ pipeline {
                 '''
                 sh 'sudo molecule test --all'
               }
-        }
+        } */
     }
 }
