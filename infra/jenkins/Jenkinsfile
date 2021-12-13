@@ -75,6 +75,15 @@ pipeline {
             }
         }
 
+        stage ('Molecule test') {
+              steps {
+                sh '''
+                  cd infra/ansible/roles/tomcat
+                  molecule test
+                '''
+              }
+        }
+
         stage('Provision Environment') {
            steps {
              ansiblePlaybook(
