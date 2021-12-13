@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
 
     environment {
         // This can be nexus3 or nexus2 server
@@ -84,23 +84,5 @@ pipeline {
                      )
            }
         }
-
-/*         stage ('Molecule test') {
-              agent {
-                docker {
-                    image 'quay.io/ansible/toolset'
-                    args '-v /var/run/docker.sock:/var/run/docker.sock'
-                }
-              }
-              steps {
-                sh '''
-                    docker -v
-                    python -V
-                    ansible --version
-                    molecule --version
-                '''
-                sh 'sudo molecule test --all'
-              }
-        } */
     }
 }
