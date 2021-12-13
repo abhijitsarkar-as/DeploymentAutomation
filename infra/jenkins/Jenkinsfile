@@ -74,5 +74,15 @@ pipeline {
                 }
             }
         }
+
+        stage('Provision Environment') {
+           steps {
+             ansiblePlaybook(
+                     playbook: 'infra/ansible/tomcat-setup.yml',
+                     inventory: 'infra/ansible/inventories/develope/hosts',
+                     credentialsId: 'ansible_ssh_private_key_file'
+                     )
+           }
+        }
     }
 }
