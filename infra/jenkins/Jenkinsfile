@@ -78,8 +78,6 @@ pipeline {
             stage ('Setup Python virtual environment') {
               steps {
                 sh '''
-                  export HTTP_PROXY=http://127.0.0.1:3128
-                  export HTTPS_PROXY=http://127.0.0.1:3128
                   python3 -m pip install --upgrade pip
                   python3 -m pip install --upgrade venv
                   python3 -m venv env
