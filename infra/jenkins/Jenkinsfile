@@ -80,7 +80,7 @@ pipeline {
                 sh '''
                   python3 -m pip install --upgrade pip
                   export HTTP_PROXY=http://10.123.123.123:8080
-                  export HTTPS_PROXY=http://10.123.123.123:8080
+                  export HTTPS_PROXY=https://10.123.123.123:443
                   python3 -m pip install --upgrade venv
                   python3 -m venv env
                   source env/bin/activate
