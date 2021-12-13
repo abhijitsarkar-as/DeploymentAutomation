@@ -1,8 +1,0 @@
----
-- name: Platform deployment playbook
-  hosts: tomcat-nodes         # Inventory hosts group / server to act on
-  gather_facts: True          #This will check the connectivity between master and other nodes
-  become: yes                 # If to escalate privilege
-
-  roles:
-    - java
