@@ -1,5 +1,10 @@
 ---
 - name: Tomcat deployment playbook
+  hosts: all       # Inventory hosts group / server to act on
+  become: yes               # If to escalate privilege
+  become_method: sudo       # Set become method
+  remote_user: root         # Update username for remote server
+
   vars:
     download_dir:  /home/ec2-user/downloads
     download_url:  http://3.109.95.73:8081/repository/maven-public/com/za/exaze/DeploymentAutomation/1.0-SNAPSHOT/DeploymentAutomation-1.0-20211213.170217-60.war
