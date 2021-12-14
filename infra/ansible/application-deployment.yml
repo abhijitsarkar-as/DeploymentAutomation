@@ -1,13 +1,13 @@
 ---
-- name: Calculate Settings
-  set_fact:
-    download_dir:  "/home/ec2-user/downloads"
-    download_url:  "http://3.109.95.73:8081/repository/maven-public/com/za/exaze/DeploymentAutomation/1.0-SNAPSHOT/DeploymentAutomation-1.0-20211213.170217-60.war"
-    artifact_file: "/home/ec2-user/downloads/DeploymentAutomation-1.0-20211213.170217-60.war"
-    latest_link:   "/home/ec2-user/releases/latest"
-    release_dir:   "/home/ec2-user/releases/DeploymentAutomation-1.0-20211213.170217-60"
-    backup_dir:    "/home/ec2-user/backups"
-    binary_dir:    "/usr/local/bin"
+- name: Tomcat deployment playbook
+  vars:
+    download_dir:  /home/ec2-user/downloads
+    download_url:  http://3.109.95.73:8081/repository/maven-public/com/za/exaze/DeploymentAutomation/1.0-SNAPSHOT/DeploymentAutomation-1.0-20211213.170217-60.war
+    artifact_file: /home/ec2-user/downloads/DeploymentAutomation-1.0-20211213.170217-60.war
+    latest_link:   /home/ec2-user/releases/latest
+    release_dir:   /home/ec2-user/releases/DeploymentAutomation-1.0-20211213.170217-60
+    backup_dir:    /home/ec2-user/backups
+    binary_dir:    /usr/local/bin
 
 - name: Deploy war
   hosts: all
