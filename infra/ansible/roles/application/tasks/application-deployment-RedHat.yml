@@ -7,8 +7,8 @@
     - "{{ release_dir }}"
     - "{{ backup_dir }}"
 
-- name: Backup Old war file
-  command: cp /usr/local/tomcat/webapps/*.war {{ backup_dir }}/
+#- name: Backup Old war file
+  #command: cp /usr/local/tomcat/webapps/*.war {{ backup_dir }}/
 
 - name: Download war file from artifactory
   get_url:
