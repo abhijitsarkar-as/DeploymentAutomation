@@ -29,7 +29,8 @@
 - name: Copy the war file
   copy:
     src: "{{ artifact_file }}"
-    dest: "{{ release_dir }}"
+    dest: /usr/share/tomcat/webapps
+    remote_src: yes
 
 - name: restart tomcat
   service:
