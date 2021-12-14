@@ -86,10 +86,16 @@ pipeline {
         }
 
         stage('Molecule Test') {
-                    agent {
-                        docker { image 'quay.io/ansible/toolset'  args '-v /var/run/docker.sock:/var/run/docker.sock'}
-                    }
+/*                     agent {
+                        docker { image 'quay.io/ansible/toolset'
+                                 args '-v /var/run/docker.sock:/var/run/docker.sock'
+                        }
+                    } */
                     steps {
+                        script {
+                                        docker.image('quay.io/ansible/toolset')
+                                              .inside('-v /var/run/docker.sock:/var/run/docker.sock'){}
+                        }
                         sh 'node --version'
                         sh 'docker -v'
                         sh 'python -V'
