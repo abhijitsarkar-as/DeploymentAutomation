@@ -3,9 +3,9 @@
     path: "{{ item }}"
     state: directory
   with_items:
-    - {{ download_dir }}
-    - {{ release_dir }}
-    - {{ backup_dir }}
+    - "{{ download_dir }}"
+    - "{{ release_dir }}"
+    - "{{ backup_dir }}"
 
 - name: Backup Old war file
   command: cp /usr/local/tomcat/webapps/*.war {{ backup_dir }}/
