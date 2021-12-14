@@ -1,0 +1,51 @@
+---
+- name: Calculate Settings
+  set_fact:
+    download_dir:  "/home/ec2-user/downloads"
+    download_url:  "http://3.109.95.73:8081/repository/maven-public/com/za/exaze/DeploymentAutomation/1.0-SNAPSHOT/DeploymentAutomation-1.0-20211213.170217-60.war"
+    artifact_file: "/home/ec2-user/downloads/DeploymentAutomation-1.0-20211213.170217-60.war"
+    latest_link:   "/home/ec2-user/releases/latest"
+    release_dir:   "/home/ec2-user/releases/DeploymentAutomation-1.0-20211213.170217-60"
+    backup_dir:    "/home/ec2-user/backups"
+    binary_dir:    "/usr/local/bin"
+
+- name: Deploy war
+  hosts: all
+  tasks:
+    - name: Create Directories
+      file:
+        path: "{{ item }}"
+        state: directory
+      with_items:
+        - "{{ download_dir }}"
+        - "{{ release_dir }}"
+        - "{{ backup_dir }}"
+
+    - name: Backup Old war file
+      command: cp /usr/local/tomcat/webapps/*.war {{ backup_dir }}/
+
+    - name: Download war file from artifactory
+      get_url:
+        url: "{{ download_url }}"
+        dest: "{{ artifact_file }}"
+        username: admin
+        password: exaze
+        mode: 0644
+
+    - name: Stop tomcat
+      service:
+        name: tomcat
+        state: stopped
+
+    #- name: Delete old war
+      #command: rm -rf /home/apache-tomcat-9.0.37/webapps/abc*
+
+    - name: Copy the war file
+      copy:
+        src: "{{ artifact_file }}"
+        dest: "{{ release_dir }}"
+
+    - name: restart tomcat
+      service:
+        name: tomcat
+        state: restarted
